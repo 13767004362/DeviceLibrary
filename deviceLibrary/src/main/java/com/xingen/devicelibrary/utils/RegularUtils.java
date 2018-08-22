@@ -1,5 +1,7 @@
 package com.xingen.devicelibrary.utils;
 
+import android.text.TextUtils;
+
 import java.util.regex.Pattern;
 
 /**
@@ -15,6 +17,9 @@ public class RegularUtils {
      * @return
      */
     public static boolean isMatchesDigital(String content){
+        if (TextUtils.isEmpty(content)){
+            return false;
+        }
        return Pattern.matches("^[0-9]*$",content);
     }
 }
